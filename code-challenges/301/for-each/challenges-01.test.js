@@ -41,7 +41,15 @@ const addValues = (arr, value) => {
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
-}
+  for (let i = 0; i <= times; i++) {
+        callback(arr, num);
+    }
+    arr.pop(); 
+    return arr;
+  }
+
+  
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -57,10 +65,17 @@ Return the modified array.
 
 const removeOne = (num, arr) => {
   // Solution code here...
+    if (num % 3 === 2) {
+        arr.pop();
+    }
 }
 
 const removeElements = (arr, callback) => {
   // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+      callback(arr[i], arr);
+  }
+  return arr;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,9 +84,11 @@ CHALLENGE 4
 Write a function named removeWithForEach that produces the same output as challenge 3, but uses forEach.
 ------------------------------------------------------------------------------------------------ */
 
-const removeWithForEach = (arr, callback) => {
+arr.forEach( (arr, callback) => {
   // Solution code here...
-}
+  callback(arr, arr);
+  });
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
