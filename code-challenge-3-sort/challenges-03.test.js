@@ -24,6 +24,11 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 const alphabetize = (arr) => {
   // Solution code here...
   return arr.sort( (a,b) => a > b)
+  //return arr.sort
+  //return arr.sort( (a,b) => a > b ? 1 : (a < b ? -1 : 0) );
+  // ? is a ternary operator, 3 parts -> condition ? ifTrue : ifFalse
+  // const x = 'x';
+  // x ==='x' ? console.log(true) : console.log(false)
 };
 
 /* ------------------------------------------------------------------------------------------------
