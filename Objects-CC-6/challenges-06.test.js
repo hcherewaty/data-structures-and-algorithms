@@ -102,8 +102,11 @@ hasChildrenValues(characters, 'Eddard') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-  for (var i = 0; i < characters.length; i++) {
-      
+  for (let i in characters) {
+      if(characters[i].children !== [])
+      return true;
+  }   if (characters[i].children === []) {
+      return false;
   }
 }
 
