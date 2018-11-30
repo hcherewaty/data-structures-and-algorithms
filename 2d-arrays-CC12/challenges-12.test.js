@@ -82,6 +82,7 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  return arr[2].items[1].quantity;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,6 +117,13 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 
 const calculateProduct = (numbers) => {
   // Solution code here...
+  for (let i = 0; i <= numbers.length - 1; i++) {
+    let totalNum = 0;
+    for (let n = 0; n <= numbers[i].length - 1; i++) {
+      totalNum = totalNum * numbers[i][n];
+    }
+  }
+  return totalNum;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,6 +144,15 @@ const weeklyTemperatures = [
 
 const averageDailyTemperature = (weather) => {
   // Solution code here...
+  for (let i = 0; i <= weather.length - 1; i++) {
+    let total = 0;
+    for (let n = 0; n <= weather[i].length - 1; i++) {
+      total = total + weather[i][n];
+    }
+    let final = total / 30;
+    
+  }
+  return final;
 }
 
 /* ------------------------------------------------------------------------------------------------
