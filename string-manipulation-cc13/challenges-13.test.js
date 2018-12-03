@@ -10,13 +10,9 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
-  let words = arr.toString();
   let result = [];
-  let validator = (/\b(\w)/g);
-  for (let i = 0; i < words.length; i++) {
-    let letters =  words.charAt(i);
-    validator.test(letters);
-    result.push(letters);
+  for (let i = 0; i < arr.length; i++) {
+    result.push(arr[i].charAt(0));
   }
   return result;
 };
@@ -32,9 +28,13 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 const findHappiness = (arr) => {
   // Solution code here...
   let result = [];
-  let str = arr.toString();
-  let smile = str.substring(0,15);
-    result.push(smile);
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i].includes(':)')) {
+        result.push(arr[i]);
+    }
+  }
+  return result;
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,18 +64,26 @@ For example, 'abcdefg' returns 'bdf'
 const onlyOddChars = (str) => {
   // Solution code here...
   let nums = [];
-  let numOne = str.indexOf(1)
-  nums.push(numOne);
-  let numTwo = str.indexOf(3);
-  nums.push(numTwo);
-  let numThree = str.indexOf(5);
-  nums.push(numThree);
-  let numFour = str.indexOf(7);
-  nums.push(numFour);
-  let numFive = str.indexOf(9);
-  nums.push(numFive);
-  nums.toString();
-  return nums;
+//   let numOne = str.indexOf(1)
+//   nums.push(numOne);
+//   let numTwo = str.indexOf(3);
+//   nums.push(numTwo);
+//   let numThree = str.indexOf(5);
+//   nums.push(numThree);
+//   let numFour = str.indexOf(7);
+//   nums.push(numFour);
+//   let numFive = str.indexOf(9);
+//   nums.push(numFive);
+//   nums.toString();
+//   return nums;
+
+for (let i = 1; i < str.length; i += 2) {
+    nums.push(str[i]);
+}
+let numbers = nums.join('');
+let result = numbers.toString();
+
+return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
