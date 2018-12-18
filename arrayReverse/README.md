@@ -14,4 +14,4 @@ Collaborative effort whiteboarding with Jon DiQuattro:
 
 
 ## Solution
-![(../assets/array_reverse.jpg)]
+![(/assets/array_reverse.jpg)]
