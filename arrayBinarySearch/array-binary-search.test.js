@@ -9,4 +9,8 @@ describe('Array', () => {
         let result = binaryArray.binarySearch(['a','b','c'], 'x');
         expect(result).toEqual(-1);
     });
+    it('test will return null if object is passed in', () => {
+        let result = binaryArray.binarySearch([{}], 'c');
+        expect(result).toEqual(null);
+    })
 });

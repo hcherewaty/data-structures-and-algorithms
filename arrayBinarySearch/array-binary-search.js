@@ -3,12 +3,17 @@
 let binaryArr = module.exports = {};
 
 binaryArr.binarySearch = (arr, val) => {
-let output = -1;
+    let output = -1;
+    if(typeof(arr[0]) === 'object') {
+        output = null;
+    }
 
-for (let i in arr) {
-    if(arr[i] === val) {
-        output = i;
+    if(output !== null) {
+        for (let i in arr) {
+            if(arr[i] === val) {
+                output = i;
+            };
+        };
     };
-};
 return output;
 };
