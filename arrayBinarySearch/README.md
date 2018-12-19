@@ -1,17 +1,18 @@
 # Insert and shift middle index of array
-Code Challenge 02 -- 01 12/18/18 -- Heather Cherewaty & Hannah Ingham
+Code Challenge 02 -- 01 12/19/18 -- Heather Cherewaty, Ryan Gallaway, & Jake Anderson
 
 ## Challenge
-Per canvas instructions:  Write a function called insertShiftArray which takes in an array and the value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.
+Per canvas instructions:  Write a function called BinarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the search key, or -1 if the element does not exist.
 
 ## Approach & Efficiency
-Collaborative effort whiteboarding with Hannah:
+Collaborative effort whiteboarding with Ryan & Jake:
     - Identified problem domain
     - Visualized solution
     - Formulated an algorithm
     - Wrote code for the insertShiftArray function
     - Verification step
-    - Tested code in console to be sure it worked
+    - Tested code in repl to be sure it worked
+    - Wrote tests for code
 
 ## Solution
-![Reverse Array Image](array_shift.jpg)
+![Binary Search Array Image](array_binary_search.jpg)
