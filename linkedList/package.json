@@ -1,0 +1,17 @@
+{
+  "name": "linkedlist",
+  "version": "1.0.0",
+  "description": "12/21/18 -- Heather Cherewaty",
+  "main": "linked-list.js",
+  "scripts": {
+    "start": "node linked-list.js",
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
+  },
+  "author": "Heather Cherewaty",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^11.5.0"
+  }
+}
