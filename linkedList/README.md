@@ -1,5 +1,5 @@
 # Linked Lists
-12/21/18 -- Heather Cherewaty
+12/21/18 -- Heather Cherewaty 
 
 ## Challenge
 ### Per canvas instructions:  
@@ -21,9 +21,9 @@ Define a method called includes which takes any value as an argument and returns
 
 ## Approach & Efficiency
 
-* Created Node class with constructor
-* Created LinkedList class with construction and insert, includes, and print methods
-* Added new nodes
-* Made three test assertions to test the LinkedList class and it's methods
+* Created Node class with constructor.
+* Created LinkedList class with construction and insert, includes, and print methods.
+* Added new nodes.
+* Made three test assertions to test the LinkedList class and it's methods.
 
 
