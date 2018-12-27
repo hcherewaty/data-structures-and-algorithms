@@ -1,8 +1,10 @@
 # Linked Lists
 12/21/18 -- Heather Cherewaty 
 
+12/27/18 -- Code Challenge 6 with Jacob Anderson
+
 ## Challenge
-### Per canvas instructions:  
+### 12/21/18 Per canvas instructions:  
 
 * Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 
@@ -19,11 +21,21 @@ Define a method called includes which takes any value as an argument and returns
 
 * Be sure to follow your language/frameworks standard naming conventions (e.g. C# uses PascalCasing for all method and class names).
 
+### 12/27/18 Per canvas instructions:  
+* Write the following methods for the Linked List class:
+
+* .append(value) which adds a new node with the given value to the end of the list
+
+* .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+
+* .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+
 ## Approach & Efficiency
 
 * Created Node class with constructor.
-* Created LinkedList class with construction and insert, includes, and print methods.
+* Created LinkedList class with construction and insert, includes, append, insertBefore, insertAfter, and print methods.
 * Added new nodes.
 * Made three test assertions to test the LinkedList class and it's methods.
 
-
+## Solution
+![LL Insertions Image](ll_insertions.jpg)

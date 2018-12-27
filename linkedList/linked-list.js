@@ -19,19 +19,8 @@ class LinkedList {
     // Add a new Node with value to the head
     insert(value) {
         let node = new Node(value);       // adds a new Node
-        if (! this.head) {                // if there is no head...
-            this.head = node;             // assign this node to head
-            return;
-        }
-
-        let current = this.head;          // start at head Node...
-
-        while(current.next) {             // while I have a next on the thing I'm looking at...
-        
-        current = current.next;           // if I have a next, change pointer to the next one
-        }
-
-        current.next = node;              // when done with while loop, will be at the last one so add a node, node has a value of null
+        node.next = this.head;            // points new node's next property to head
+        this.head = node;                 // head equals node
     }
 
     // Check if value exists in list
@@ -49,8 +38,49 @@ class LinkedList {
         return current.value === value ? true: null; // checking the last node for the value I'm searching for; if it's true, return true, else return null                       
     }
 
-    print() {                             // outputs all current Node values
-        return list;
+    // add a node to the end of the linked list
+    append(value) {
+        let current = this.head;               //start from the head node
+        
+        while(current.next !== null) {
+            current = current.next;
+        }
+        current.next = new Node(value);
+    }
+
+    insertBefore(oldVal, newVal) {
+        let node = new Node(newVal);
+        let current = this.head;
+        let preNode = current;
+    
+        while (current.value !== oldVal) {
+          preNode = current;
+          current = current.next;
+        }
+    
+        node.next = current;
+        preNode.next = node;
+      }
+
+    insertAfter(oldVal, newVal) {
+        let current = this.head;
+
+        while(current.value !== oldVal) {
+            current = current.next;
+        }
+
+        let node = new Node(newVal);       // creates new Node
+        node.next = current.next;          // new node to next node
+        current.next = node;               // points previous node to new node
+    }
+
+    print() { 
+         let current = this.head;
+         while(current.next) {
+             console.log(current.value);
+             current = current.next;
+         }  
+         console.log(current.value);                               
     }
 }
 
@@ -58,7 +88,7 @@ class LinkedList {
 
 let list = new LinkedList();
 
-// list.print();
+
 
 
 list.insert('Heather');
@@ -66,7 +96,13 @@ list.insert('Steve');
 list.insert('Atlas');
 list.insert('Lily');
 
-console.log(list.includes('John'));
+// list.insertAfter('Atlas', '6');
+list.insertBefore('Atlas', '6');
+// list.append('New thing');
+
+// console.log(list.includes('John'));
+
+list.print();
 
 // console.log(util.inspect(list, {depth: 10}));
 
