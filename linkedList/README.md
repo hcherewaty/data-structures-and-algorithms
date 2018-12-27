@@ -33,7 +33,7 @@ Define a method called includes which takes any value as an argument and returns
 ## Approach & Efficiency
 
 * Created Node class with constructor.
-* Created LinkedList class with construction and insert, includes, append, insertBefore, insertAfter, and print methods.
+* Created LinkedList class with construction and insert, includes, appends, insertBefore, insertAfter, and print methods.
 * Added new nodes.
 * Made three test assertions to test the LinkedList class and it's methods.
 
