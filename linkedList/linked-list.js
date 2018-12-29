@@ -74,6 +74,27 @@ class LinkedList {
         current.next = node;               // points previous node to new node
     }
 
+    kFromEnd(k) {
+        let length = 0;
+        let current = this.head;
+        let target;
+
+        while(current.next) {
+            current = current.next;
+            length++;
+        }
+
+        target = length - k;
+        length = 0;
+        current = this.head;
+
+        while (length < target) {
+            current = current.next;
+            length++;
+        }
+        return current.value;
+    }
+
     print() { 
          let current = this.head;
          while(current.next) {
@@ -92,18 +113,16 @@ let list = new LinkedList();
 
 
 list.insert('Heather');
-list.insert('Steve');
-list.insert('Atlas');
-list.insert('Lily');
+// list.insert('Steve');
 
-// list.insertAfter('Atlas', '6');
-list.insertBefore('Atlas', '6');
+// list.insertAfter('Steve', '40');
+// list.insertBefore('Steve', '40');
 // list.append('New thing');
 
 // console.log(list.includes('John'));
 
 list.print();
 
-// console.log(util.inspect(list, {depth: 10}));
+console.log(util.inspect(list, {depth: 10}));
 
 module.exports = LinkedList;
