@@ -59,7 +59,13 @@ class LinkedList {
         }
     
         node.next = current;
-        preNode.next = node;
+
+        if(preNode) {                      
+            preNode.next = node;
+        } else {
+            node.next = this.head;
+            this.head = node;
+        } 
       }
 
     insertAfter(oldVal, newVal) {
@@ -105,12 +111,7 @@ class LinkedList {
     }
 }
 
-
-
 let list = new LinkedList();
-
-
-
 
 list.insert('Heather');
 list.insert('Steve');
@@ -121,9 +122,9 @@ list.insert('Steve');
 
 // console.log(list.includes('John'));
 
-// list.print();
+list.print();
 
-console.log(list.kFromEnd(1));
+// console.log(list.kFromEnd(1));
 
 // console.log(util.inspect(list, {depth: 10}));
 
