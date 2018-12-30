@@ -113,7 +113,7 @@ let list = new LinkedList();
 
 
 list.insert('Heather');
-// list.insert('Steve');
+list.insert('Steve');
 
 // list.insertAfter('Steve', '40');
 // list.insertBefore('Steve', '40');
@@ -121,8 +121,10 @@ list.insert('Heather');
 
 // console.log(list.includes('John'));
 
-list.print();
+// list.print();
 
-console.log(util.inspect(list, {depth: 10}));
+console.log(list.kFromEnd(1));
+
+// console.log(util.inspect(list, {depth: 10}));
 
 module.exports = LinkedList;

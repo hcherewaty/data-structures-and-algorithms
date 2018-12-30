@@ -10,14 +10,6 @@ describe('insert method', () => {
     });
 });
 
-// describe('print method', () => {
-//     it('prints a list', () => {
-//         let newList = new LinkedList();
-//         let value = newList.print();
-//         expect(value).toEqual({"head": {"next": {"next": {"next": {"next": null, "value": "Lily"}, "value": "Atlas"}, "value": "Steve"}, "value": "Heather"}});
-//     });
-// });
-
 describe('append method', () => {
     it('creates a new node', () => {
         let newList = new LinkedList();
@@ -50,9 +42,7 @@ describe('kFromEnd method', () => {
         let newList = new LinkedList();
         newList.insert('Heather');
         newList.insert('Steve');
-        newList.insert('Atlas');
-        newList.insert('Lily');
-        let find = newList.kFromEnd(2);
-        expect(find).toEqual({"head": {"next": {"next": null, "value": "Steve"}, "value": "Heather"}});
+        let find = newList.kFromEnd(1);
+        expect(find).toEqual('Steve');
     })
 })
