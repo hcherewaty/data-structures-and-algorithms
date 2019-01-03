@@ -15,7 +15,7 @@ describe('print method', () => {
         let newList = new LinkedList();
         let value = newList.insert('Heather');
         newList.print(value);
-        expect(newList).toEqual({"head": {"next": null, "value": "Heather"}});
+        expect(newList).toEqual({"head": {"next": null, "val": "Heather"}});
     });
 });
 
