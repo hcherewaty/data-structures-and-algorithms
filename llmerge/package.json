@@ -1,0 +1,18 @@
+{
+  "name": "llmerge",
+  "version": "1.0.0",
+  "description": "1/2/19 -- Code Challenege 8 - Heather Cherewaty & Fletcher LaRue",
+  "main": "ll-merge.js",
+  "scripts": {
+    "start": "node ll-merge.js",
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^5.11.1",
+    "jest": "^23.6.0"
+  }
+}
