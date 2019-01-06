@@ -1,25 +1,39 @@
 class Node {
     constructor(value) {
-        this.value = value;         
-        this.next = null;          
+        this.value = value;
+        this.previous = null;                 
     }
 }
 
 class Stack {
     constructor() {
-      this.stack = new Node();
       this.top = null;
     }
   
     push(value) {
-      this.stack.unshift(value);
+      let node = new Node();
+
+      if(!this.top) {
+        this.top = node;
+      }
+  
       this.top = value;
     }
   
     pop() {
-      let value = this.stack.shift();
-      this.top = this.stack[0];
-      return value;
+      let newtop = this.top;
+      if(newtop) {
+        let popOffItem = newtop.value;
+        newtop = top.next;
+        return popOffItem;
+      }
+      // node.previous = this.top;
+      // let popOffItem =  this.top;
+      // this.top = node.previous;
+      // console.log(this.top.previous);
+      // let popOffItem = this.top;
+
+      return;
     }
   
     peek() {
@@ -34,11 +48,20 @@ class Stack {
     }
   
     peek() {
-      return this.front;
+      return this.top;
     }
   
     enqueue(value) {
       //put in the rear of the queue
+      let node = new Node();
+
+      if(!this.top) {
+        this.top = node;
+      }
+  
+      this.top = value;
+      node.previous = this.top;
+
   
     }
     dequeue() {
@@ -47,5 +70,21 @@ class Stack {
   
     }
   }
+
+  let newStack = new Stack();
+  // console.log(newStack);
+  newStack.push('Heather');
+  newStack.push('Steve');
+  newStack.push('Atlas');
+  // console.log(newStack.peek());
+  newStack.push('Lily');
+  // newStack.pop();
+  console.log(newStack.peek());
+
+  let newQ = new Queue();
+
+  newQ.enqueue('Heather');
+  newQ.enqueue('Steve');
+  console.log(newQ.peek());
   
   module.export = {Node, Stack, Queue};
