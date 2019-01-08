@@ -6,7 +6,7 @@ describe('enqueue', () => {
     it('adds animal to either cat or dog array', () => {
         let shelter = new Animals();
         shelter.enqueue('cat');
-        expect(shelter).toEqual({"cat": ["cat"], "dog": []});
+        expect(shelter.cat[0]).toEqual('cat');
     });
 });
 
@@ -16,6 +16,7 @@ describe('dequeue', () => {
         shelter.enqueue('cat');
         shelter.enqueue('cat');
         shelter.dequeue('cat');
-        expect(shelter).toEqual({"cat": ["cat"], "dog": []});
+        expect(shelter.cat[0]).toEqual('cat');
     });
 });
+
