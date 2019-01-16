@@ -18,3 +18,5 @@ Heather Cherewaty
 #### Tests
 * npm test (runs unit tests)
 * npm run lint (runs linter tests)
+
+![bsf Image](bsf.jpg)
