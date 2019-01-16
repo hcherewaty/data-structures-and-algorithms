@@ -1,5 +1,7 @@
 'use strict';
 
+const Thing = require('../stacks_and_queues/stacks-and-queues');
+
 class Node {
     constructor(value) {
         this.value = value;
@@ -7,6 +9,62 @@ class Node {
         this.right = null;
     }
 }
+class Queue {
+    constructor() {
+        this.first = null;
+        this.last = null;
+        this.size = 0;
+    }
+    //adds a thing to the end
+    enqueue(val) { //accepts a value
+  
+        //create a new node using the value passed in
+        let newNode = new Node(val);
+        //check if queue is empty:
+        //if there are no nodes in the queue, set this node to be the first and last property of the queue
+        if(!this.first) { //edge case
+            this.first = newNode;
+            this.last = newNode;
+        } else {
+            //otherwise, set the next property on the current last to be that node,
+            this.last.next = newNode;
+            //and then set the last property of the queue to be that node
+            this.last = newNode;
+        }
+         //increment the size of the queue by 1 and return
+         return ++this.size;
+    }
+  
+    //removes the first thing that was added in (at the beginning)
+    dequeue() {
+  
+        //if there is no first property, return null
+        if(!this.first) {return null;}
+  
+        //store the first property in a variable
+        let temp = this.first;
+  
+        //see if the first is the same as the last (check if there is only 1 node).  If so, last to be null.
+        if(this.first === this.last) {
+            this.last = null;
+        }
+  
+        //If there is more than 1 node, set the first property to be the next property of the first
+        this.first = this.first.next;
+        
+        //Decrement size by 1
+        this.size--;
+  
+        //return the value of the node dequeued.
+        return temp.value;
+    }
+    peek() {
+        //if there is no first
+        if(!this.first) {
+          return null;
+        } else {return this.first}
+      }
+  }
 
 class BinaryTree {
     constructor(){
@@ -61,6 +119,30 @@ class BinaryTree {
         }
         _walk(this.root);
         return nodes;
+    }
+
+    bsf(tree) {
+        let data = new Queue();
+        let treeQ = new Queue();
+
+        data.enqueue(tree.root);
+
+        while(data.length) {
+            let temp = data.dequeue();
+
+            if(temp.left) {
+                data.enqueue(temp.left);
+            }
+            if(temp.right) {
+                data.enqueue(temp.right);
+            }
+            treeQ.enqueue(temp);
+        }
+
+        while(treeQ.length) {
+            console.log(treeQ.dequeue());
+        }
+        return;
     }
 
 
@@ -124,35 +206,24 @@ class BinarySearchTree {
     
 }
 
-    //steps to add:
-        //create a new node
-         // starting at the root:
-        // check if there is a root; if not, the root now becomes that new node. 
-        //If there is a root, check if the value of the new node is greater than or less than the value of the root.
-        //If it is greater:
-            //check to see if there is a node to the right; if there is, move to that node and repeat these steps.
-            //If there is not, add that node as the right property.
-        //If it is less:
-            
-            //If there is not, add that node as the left property
-    //return tree at end of method ?
+
 let tree = new BinaryTree();
 
+let a = new Node('10');
+let b = new Node('6');
+let c = new Node('5');
+let d = new Node('15');
+let e = new Node('8');
+let f = new Node('2');
 
-// console.log(tree.preOrder());
-// tree.inOrder();
-// tree.postOrder();
+a.left = b;
+a.right= c;
+c.left = f;
+b.left = d;
+b.right = e;
+tree.root = a;
 
-
-let treeBST = new BinarySearchTree();
-// treeBST.root = new Node(10);
-// treeBST..root.right = new Node (15);
-// treeBST..root.left = new Node(7);
-// treeBST..root.left.right = new Node(9);
-
-// console.log(treeBST);
-// console.log(treeBST.root);
-// console.log(treeBST.root.right);
+console.log(tree.bsf(tree));
 
 
 module.exports = {Node, BinaryTree, BinarySearchTree};
