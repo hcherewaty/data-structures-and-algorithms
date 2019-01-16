@@ -6,6 +6,25 @@ describe('Binary Tree', () => {
     let tree = new Tree.BinaryTree();
     expect(tree instanceof Tree.BinaryTree).toBeTruthy()
   });
+
+  it('can traverse breadth first', () => {
+    let tree = new BinaryTree();
+
+    let a = new Node('10');
+    let b = new Node('6');
+    let c = new Node('5');
+    let d = new Node('15');
+    let e = new Node('8');
+    let f = new Node('2');
+
+    a.left = b;
+    a.right= c;
+    c.left = f;
+    b.left = d;
+    b.right = e;
+    tree.root = a;
+    expect(tree.bsf(tree)).toEqual(['10','6','5','15','8','2'])
+  });
 });
 
 describe('Binary Search Tree', () => {
