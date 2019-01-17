@@ -9,62 +9,7 @@ class Node {
         this.right = null;
     }
 }
-class Queue {
-    constructor() {
-        this.first = null;
-        this.last = null;
-        this.size = 0;
-    }
-    //adds a thing to the end
-    enqueue(val) { //accepts a value
-  
-        //create a new node using the value passed in
-        let newNode = new Node(val);
-        //check if queue is empty:
-        //if there are no nodes in the queue, set this node to be the first and last property of the queue
-        if(!this.first) { //edge case
-            this.first = newNode;
-            this.last = newNode;
-        } else {
-            //otherwise, set the next property on the current last to be that node,
-            this.last.next = newNode;
-            //and then set the last property of the queue to be that node
-            this.last = newNode;
-        }
-         //increment the size of the queue by 1 and return
-         return ++this.size;
-    }
-  
-    //removes the first thing that was added in (at the beginning)
-    dequeue() {
-  
-        //if there is no first property, return null
-        if(!this.first) {return null;}
-  
-        //store the first property in a variable
-        let temp = this.first;
-  
-        //see if the first is the same as the last (check if there is only 1 node).  If so, last to be null.
-        if(this.first === this.last) {
-            this.last = null;
-        }
-  
-        //If there is more than 1 node, set the first property to be the next property of the first
-        this.first = this.first.next;
-        
-        //Decrement size by 1
-        this.size--;
-  
-        //return the value of the node dequeued.
-        return temp.value;
-    }
-    peek() {
-        //if there is no first
-        if(!this.first) {
-          return null;
-        } else {return this.first}
-      }
-  }
+
 
 class BinaryTree {
     constructor(){
@@ -122,27 +67,50 @@ class BinaryTree {
     }
 
     bsf(tree) {
-        let data = new Queue();
-        let treeQ = new Queue();
+        let data = [];
+        let treeQ = [];
 
-        data.enqueue(tree.root);
+        let node = this.root;
+        data.push(node);
 
         while(data.length) {
-            let temp = data.dequeue();
+            let temp = data.shift();
 
             if(temp.left) {
-                data.enqueue(temp.left);
+                data.push(temp.left);
             }
             if(temp.right) {
-                data.enqueue(temp.right);
+                data.push(temp.right);
             }
-            treeQ.enqueue(temp);
+            treeQ.push(temp);
         }
 
         while(treeQ.length) {
-            console.log(treeQ.dequeue());
+            console.log(treeQ.shift());
         }
         return;
+    }
+
+    maxValue() {
+        let data = [this.root];
+        let max = this.root.value;
+
+        while(data.length){
+            let current = data[0];
+
+            if(current.left) {
+                data.push(current.left);
+            }
+            if(current.right){
+                data.push(current.right);
+            }
+            let newCurrent = data.shift();
+
+            if(max < newCurrent.value) {
+                max = newCurrent.value;
+            }
+        }
+        return max;
     }
 
 
@@ -202,7 +170,6 @@ class BinarySearchTree {
         }
         return false;
     }
-
     
 }
 
@@ -223,7 +190,9 @@ b.left = d;
 b.right = e;
 tree.root = a;
 
-console.log(tree.bsf(tree));
+console.log(tree.maxValue());
+
+// console.log(tree.bsf(tree));
 
 
 module.exports = {Node, BinaryTree, BinarySearchTree};

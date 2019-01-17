@@ -13,10 +13,10 @@ Heather Cherewaty
 #### Running the app
 * `npm start`
 * Endpoint: `/tree.js`
-  * Returns Binary Tree and Binary Search Tree values
+  * Returns Binary Tree and Binary Search Tree values 
 
 #### Tests
 * npm test (runs unit tests)
 * npm run lint (runs linter tests)
 
-![bsf Image](bsf.jpg)
+![Find Max Image](find-maximum-value.jpg)
