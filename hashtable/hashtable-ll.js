@@ -1,6 +1,6 @@
 'use strict';
 const util = require('util');
-const List = require('../linkedList/linked-list');
+const List = require('../linkedList/linked-list.js');
 
 
 class HashMap {
@@ -18,15 +18,15 @@ class HashMap {
     add(key, value) {
         let hash = this.hash(key)
         if ( !this.map[hash] ) {
-            this.map[hash] = new List.LinkedList();
+            this.map[hash] = new List();
         }
-        this.map[hash].push({[key]:value});
+        this.map[hash].insert({[key]:value});
     }
 
     find(key) {
         let hash = this.hash(key);
         if(this.map[hash]) {
-            return this.map[hash].value;
+            return this.map[hash];
         } else {
             'does not exist.'
         }
@@ -59,13 +59,15 @@ myHash.add('Steve', 'Husband');
 myHash.add('Atlas', 'Doo');
 myHash.add('Lily', 'Puss');
 
-// console.log(myHash.find('Heather'));
+console.log(myHash.find('Heather'));
 // console.log(myHash.find('zebra'));
 
 // console.log(myHash.contains('Steve'));
 // console.log(myHash.contains('zebra));
 
-console.log(myHash.GetHash('Atlas'));
+// console.log(myHash.GetHash('Atlas'));
 // console.log(myHash.contains('zebra'));
 
 // console.log( util.inspect(myHash, {showHidden: false, depth: null}));
+
+module.exports = HashMap;
