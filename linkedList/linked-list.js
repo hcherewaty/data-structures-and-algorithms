@@ -40,12 +40,17 @@ class LinkedList {
 
     // add a node to the end of the linked list
     append(value) {
+        let node = new Node(value);
+        if( !this.head){
+            this.head = node;
+            return;
+        }
         let current = this.head;               //start from the head node
         
-        while(current.next !== null) {
+        while(current.next) {
             current = current.next;
         }
-        current.next = new Node(value);
+        current.next = node;
     }
 
     insertBefore(oldVal, newVal) {
@@ -69,13 +74,19 @@ class LinkedList {
       }
 
     insertAfter(oldVal, newVal) {
+        let node = new Node(value);
+
+        if( !this.head) {
+            this.head = node;
+            return;
+        }
+        
         let current = this.head;
 
         while(current.value !== oldVal) {
             current = current.next;
         }
-
-        let node = new Node(newVal);       // creates new Node
+                                              // creates new Node
         node.next = current.next;          // new node to next node
         current.next = node;               // points previous node to new node
     }
@@ -115,6 +126,7 @@ let list = new LinkedList();
 
 list.insert('Heather');
 list.insert('Steve');
+list.append('Atlas');
 
 // list.insertAfter('Steve', '40');
 // list.insertBefore('Steve', '40');
