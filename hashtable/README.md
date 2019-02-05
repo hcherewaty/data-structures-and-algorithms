@@ -19,10 +19,29 @@
 ## Challenge
 ### 2/4/19 Per canvas instructions:  
 
-#### Implement a Hashtable with the following capabilities
-
 * Write a function that accepts a lengthy string parameter.
 * Without utilizing any of the built-in library methods available to your language, return the first word to occur more than once in that provided string.
 
 #### UML
 ![Whiteboard](repeatedstring.jpg)
+
+## Challenge
+
+### Parters:  Heather Cherewaty, Hannah Ingham, Jon DiQuattro
+### 2/5/19 Per canvas instructions:  
+
+* Write a function called tree_intersection that takes two binary tree parameters.
+* Without utilizing any of the built-in library methods available to your language, return a set of values found in both trees.
+
+## Approach & Efficiency
+
+* Created a function that accepts two binary trees as parameters.
+* Traverses first tree and adds to a hashmap.
+* Traverses second tree and evaluates if the node value is contained within the hash map.
+* Added tests to test functionality.
+
+#### UML
+![Whiteboard](tree_intersection.jpg)
+
+
+
