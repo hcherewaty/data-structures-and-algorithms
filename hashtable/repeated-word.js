@@ -6,7 +6,7 @@ const util = require('util');
 let str = 'i like to meow to the moon'
 
 function repeatedWord(str){
-    let splitStr = string.split(' ');
+    let splitStr = str.split(' ');
 
     let myHash = new HMap(100);
 
@@ -20,3 +20,5 @@ function repeatedWord(str){
   }
 
   console.log(repeatedWord(str))
+
+  module.exports = {repeatedWord};
