@@ -15,3 +15,14 @@
 * Created HashMap class with constructor assigning size (number of buckets) and instantiating a new array the length of the size of the HashMap.
 * Created `add`, `find`, `contains`, `GetHash` methods.
 * Added tests to test functionality of HashMap class.
+
+## Challenge
+### 2/4/19 Per canvas instructions:  
+
+#### Implement a Hashtable with the following capabilities
+
+* Write a function that accepts a lengthy string parameter.
+* Without utilizing any of the built-in library methods available to your language, return the first word to occur more than once in that provided string.
+
+#### UML
+![Whiteboard](repeatedstring.jpg)
