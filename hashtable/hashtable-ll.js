@@ -35,9 +35,9 @@ class HashMap {
     contains(key) {
         let hash = this.hash(key);
         if(this.map[hash]) {
-            return 'This key already exists in the HashMap.'
+            return true;
         } else {
-            return 'This key does not exist in the HashMap.'
+            return false;
         }
     }
 
@@ -59,7 +59,7 @@ myHash.add('Steve', 'Husband');
 myHash.add('Atlas', 'Doo');
 myHash.add('Lily', 'Puss');
 
-console.log(myHash.find('Heather'));
+// console.log(myHash.find('Heather'));
 // console.log(myHash.find('zebra'));
 
 // console.log(myHash.contains('Steve'));
