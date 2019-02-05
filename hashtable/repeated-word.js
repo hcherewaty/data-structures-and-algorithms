@@ -3,16 +3,16 @@
 const HMap = require('./hashtable-ll');
 const util = require('util');
 
-let str = 'i like to meow to the moon'
+let str = 'Once upon a time, there was a brave princess who...'
 
 function repeatedWord(str){
     let splitStr = str.split(' ');
 
     let myHash = new HMap(100);
 
-    for(let i = 0; i < splitStr.length; i ++){
+    for(let i = 0; i < splitStr.length; i++){
       if(myHash.contains(splitStr[i])){
-        return splitStr[i+1];
+        return splitStr[i];
       } else {
         myHash.add(splitStr[i]);
       }
