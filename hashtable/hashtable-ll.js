@@ -33,6 +33,7 @@ class HashMap {
     }
 
     contains(key) {
+        // console.log('in contains', key)
         let hash = this.hash(key);
         if(this.map[hash]) {
             return true;
@@ -54,10 +55,10 @@ class HashMap {
 
 let myHash = new HashMap(50);
 
-myHash.add('Heather', 'Wife');
-myHash.add('Steve', 'Husband');
-myHash.add('Atlas', 'Doo');
-myHash.add('Lily', 'Puss');
+// myHash.add('Heather', 'Wife');
+// myHash.add('Steve', 'Husband');
+// myHash.add('Atlas', 'Doo');
+// myHash.add('Lily', 'Puss');
 
 // console.log(myHash.find('Heather'));
 // console.log(myHash.find('zebra'));
