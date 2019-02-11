@@ -42,6 +42,31 @@ class Graph {
         return this.size;
     }
 
+    breadthFirst(startNode){
+        let queue = [startNode];
+        let currentNode;
+        let visitedNodes = new Set();
+
+        while(queue.length){
+            currentNode = queue.pop();
+            visitedNodes.add(currentNode);
+
+            let neighbors = this.getNeighbors(currentNode);
+
+            for(let neighbor of neighbors) {
+                console.log(neighbor.node);
+                let neighborNode = neighbor.node;
+
+                if(visitedNodes.has(neighborNode)){
+                    continue;
+                } else {
+                    visitedNodes.add(neighborNode)
+                }
+                queue.unshift(neighborNode)
+            }
+        }
+        return visitedNodes;
+    }
 };
 
 
@@ -55,9 +80,40 @@ myGraph.addEdge('San Francisco', 'San Diego');
 myGraph.addEdge('San Diego', 'Phoenix', 355);
 myGraph.addNode('Phoenix');
 
-console.log( util.inspect(myGraph, {showHidden: false, depth: null}));
+// console.log( util.inspect(myGraph, {showHidden: false, depth: null}));
 // console.log(myGraph.getNeighbors('San Diego'));
 // console.log( util.inspect(myGraph.getNodes(), {showHidden: false, depth: null}));
 // console.log(myGraph.size);
+
+// ++++++++++++++++++++++++++++++
+// BFS
+// ++++++++++++++++++++++++++++++
+
+let g = new Graph();
+
+g.addNode('A');
+g.addNode('B');
+g.addNode('C');
+g.addNode('D');
+g.addNode('E');
+g.addNode('F');
+
+g.addEdge('A', 'B');
+g.addEdge('A', 'C');
+g.addEdge('B', 'D');
+g.addEdge('C', 'E');
+g.addEdge('D', 'E');
+g.addEdge('D','F');
+g.addEdge('E', 'F');
+
+//     A
+//    / \
+//   B   C
+//   |   |
+//   D - E
+//   \  /
+//     F
+
+console.log(g.breadthFirst('A'));
 
 module.exports = Graph;
