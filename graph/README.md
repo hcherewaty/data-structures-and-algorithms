@@ -30,3 +30,21 @@
 * Created Graph class with constructor instantiating a new Adjacency List as a Map and assigning a counter for size.
 * Created `addNode`, `addEdge`, `getNodes`, `getNeighbors()`, and `size()` methods.
 * Added tests to test functionality of Graph class.
+
+
+## Challenge
+### 2/11/19 
+
+#### Implement a breadth first traversal method on Graph class:
+* Accepts a starting node and traverses graph breadth first.
+
+## Approach & Efficiency
+
+* Created breadth first traversal method
+* Accepts a starting node as a parameter.
+* Traverses through graph, while queue array has a length, looks for neighbors of current node.
+* Keep track of current node by adding nodes to visited set.
+* Added tests to test functionality of breadth for method - checks to see if all nodes are visited in traversal.
+
+#### UML
+![Whiteboard](bsf_graph.jpg)

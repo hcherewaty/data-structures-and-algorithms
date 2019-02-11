@@ -50,5 +50,29 @@ describe('Graph class', () => {
 
         // expect(listOfNodes).toBeInstanceOf(Object);
         expect(myGraph.getNodes()).toContain('Heather', 'Steve', 'Atlas', 'Lily');
-    })
+    });
+});
+
+describe('BSF method', () => {
+    it('searches a graph breadth first', () => {
+        let g = new Graph();
+
+        g.addNode('A');
+        g.addNode('B');
+        g.addNode('C');
+        g.addNode('D');
+        g.addNode('E');
+        g.addNode('F');
+
+        g.addEdge('A', 'B');
+        g.addEdge('A', 'C');
+        g.addEdge('B', 'D');
+        g.addEdge('C', 'E');
+        g.addEdge('D', 'E');
+        g.addEdge('D','F');
+        g.addEdge('E', 'F');
+
+        expect(g.breadthFirst('A')).toBeInstanceOf(Set);
+        expect(g.breadthFirst('A')).toContain('A', 'B', 'C', 'D', 'E', 'F');
+    });
 });
