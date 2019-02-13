@@ -82,29 +82,33 @@ myGraph.addNode('Phoenix');
 
 // console.log( util.inspect(myGraph, {showHidden: false, depth: null}));
 // console.log(myGraph.getNeighbors('San Diego'));
+// let current = myGraph.getNeighbors('San Diego')
+// console.log(current[0].weight);
 // console.log( util.inspect(myGraph.getNodes(), {showHidden: false, depth: null}));
 // console.log(myGraph.size);
+
+
 
 // ++++++++++++++++++++++++++++++
 // BFS
 // ++++++++++++++++++++++++++++++
 
-let g = new Graph();
+// let g = new Graph();
 
-g.addNode('A');
-g.addNode('B');
-g.addNode('C');
-g.addNode('D');
-g.addNode('E');
-g.addNode('F');
+// g.addNode('A');
+// g.addNode('B');
+// g.addNode('C');
+// g.addNode('D');
+// g.addNode('E');
+// g.addNode('F');
 
-g.addEdge('A', 'B');
-g.addEdge('A', 'C');
-g.addEdge('B', 'D');
-g.addEdge('C', 'E');
-g.addEdge('D', 'E');
-g.addEdge('D','F');
-g.addEdge('E', 'F');
+// g.addEdge('A', 'B');
+// g.addEdge('A', 'C');
+// g.addEdge('B', 'D');
+// g.addEdge('C', 'E');
+// g.addEdge('D', 'E');
+// g.addEdge('D','F');
+// g.addEdge('E', 'F');
 
 //     A
 //    / \
@@ -114,6 +118,6 @@ g.addEdge('E', 'F');
 //   \  /
 //     F
 
-console.log(g.breadthFirst('A'));
+// console.log(g.breadthFirst('A'));
 
 module.exports = Graph;
