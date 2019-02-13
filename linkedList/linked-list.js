@@ -13,7 +13,9 @@ class Node {
 // LinkedList class
 class LinkedList {
     constructor() {
-        this.head = null;           // declare head Node as null
+        this.head = null;  
+        this.tail = null;
+        this.length = 0;                         // declare head Node as null
     }
 
     // Add a new Node with value to the head
@@ -43,6 +45,7 @@ class LinkedList {
         let node = new Node(value);
         if( !this.head){
             this.head = node;
+            this.tail = this.head;
             return;
         }
         let current = this.head;               //start from the head node
