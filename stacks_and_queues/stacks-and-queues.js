@@ -1,3 +1,7 @@
+'use strict';
+
+const util = require('util');
+
 class Node {
   constructor(value) {
       this.value = value;
@@ -123,22 +127,27 @@ class Queue {
 }
 
 let q = new Queue();
-
+q.enqueue('Other thing')
 q.enqueue('Heather');
 q.enqueue('Steve');
 q.enqueue('THIRD THING');
-q.dequeue();
-console.log(q.peek().value);
+
+// q.dequeue();
+// console.log(util.inspect(q, {depth: 10}));
+// console.log(q.peek().value);
+// console.log(util.inspect(list, {depth: 10}));
 
 
 
 let stack = new Stack();
 stack.push('Heather');
+
 stack.push('Steve');
 stack.push('THIRD THING');
+stack.push('Other thing')
 stack.pop();
-console.log(stack.peek().value);
+// console.log(stack.peek().value);
 
 // console.log(stack);
 
-module.export = {Node, Stack, Queue};
+module.exports = {Node, Stack, Queue};
